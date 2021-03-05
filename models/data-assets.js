@@ -7,6 +7,9 @@ module.exports = (sequelize, DataTypes) => {
     manufacturer:DataTypes.STRING,
     modelBoard:DataTypes.STRING,
     cpu:DataTypes.STRING,
+    memory:DataTypes.STRING,
+    hdd:DataTypes.STRING,
+    display:DataTypes,STRING,
      
 
   }, function(require, factory){
