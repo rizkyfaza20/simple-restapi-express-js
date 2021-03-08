@@ -10,11 +10,12 @@ module.exports = (sequelize, DataTypes) => {
     memory:DataTypes.STRING,
     hdd:DataTypes.STRING,
     display:DataTypes,STRING,
-     
-
-  }, function(require, factory){
-    'use strict';
-    
+    osversion:DataTypes.STRING
+  }, {
+    timestamps: true,
+    tableName: 'data_assets',
+    createdAt: 'created_at',
+    updatedAt: 'updated_at'
   }); {
     data_asset = function(models){
       // Define association here

@@ -1,36 +1,47 @@
 'use strict';
 module.exports = {
-  up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('data-assets', {
+  up: (queryInterface, Sequelize) => {
+    return queryInterface.createTable('data-assets', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      title: {
+      manufacturer: {
         type: Sequelize.STRING
       },
-      content: {
-        type: Sequelize.TEXT
-      },
-      tags: {
+      modelBoard: {
         type: Sequelize.STRING
       },
-      published: {
-        type: Sequelize.BOOLEAN
+      cpu: {
+        type: Sequelize.STRING
+      },
+      memory: {
+        type: Sequelize.STRING
+      },
+      hdd: {
+        type: Sequelize.STRING
+      },
+      display: {
+        type: Sequelize.STRING
+      },
+      os: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.fn('NOW')
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.fn('NOW')
       }
     });
   },
-  down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('data-assets');
+  down: (queryInterface, Sequelize) => {
+    return queryInterface.dropTable('data-assets');
   }
 };
